@@ -2,6 +2,16 @@ steps:
   - name: Checkout repository
     uses: actions/checkout@v4
 
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: "20"
+
+  - name: Install and Build App
+    run: |
+      npm install
+      npm run generate   # (သို့မဟုတ် သင့် package.json ထဲက static build command)
+
   - name: Configure AWS credentials
     uses: aws-actions/configure-aws-credentials@v4
     with:
@@ -10,4 +20,4 @@ steps:
       aws-region: us-east-1
 
   - name: Deploy static site to S3
-    run: aws s3 sync . s3://nway-portfolio-2026 --delete
+    run: aws s3 sync dist s3://nway-portfolio-2026 --delete
