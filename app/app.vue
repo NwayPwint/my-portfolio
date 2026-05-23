@@ -169,30 +169,40 @@
                 </div>
               </div>
               <div class="col-lg-7 form-container">
-                <form class="clean-form">
+                <form
+                  class="clean-form"
+                  action="https://formspree.io/f/xqedbnyp"
+                  method="POST"
+                >
                   <div class="row g-4">
                     <div class="col-md-6 form-group">
                       <label>NAME</label>
                       <input
                         type="text"
+                        name="name"
                         placeholder="Your name"
                         class="form-input"
+                        required
                       />
                     </div>
                     <div class="col-md-6 form-group">
                       <label>EMAIL</label>
                       <input
                         type="email"
+                        name="email"
                         placeholder="Email address"
                         class="form-input"
+                        required
                       />
                     </div>
                     <div class="col-12 form-group">
                       <label>MESSAGE</label>
                       <textarea
+                        name="message"
                         placeholder="How can I help you?"
                         rows="4"
                         class="form-input"
+                        required
                       ></textarea>
                     </div>
                   </div>
@@ -214,7 +224,6 @@
             <a href="#" class="brand"
               >NWAY PWINT PHYU<span class="dot">.</span></a
             >
-            <p class="copyright">© 2024 All Rights Reserved</p>
           </div>
           <div class="footer-links-group d-flex gap-4">
             <a href="https://linkedin.com" target="_blank" class="footer-social"
@@ -540,59 +549,97 @@ const skillGroups = [
 }
 
 /* Contact Form */
+
+/* Contact Section Minimalist Refinement */
 .contact-box {
   background: var(--card-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 12px;
+  border: 1.5px solid var(--input-border);
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.04);
+  margin-top: 2rem;
 }
 .contact-sidebar {
   background: var(--bg-alt);
-  padding: 5rem;
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
 }
 .contact-title {
   color: var(--heading-color);
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
 }
 .form-container {
-  padding: 5rem;
-  background: #fff;
+  padding: 3.5rem 2.5rem;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .form-group label {
-  color: #5d7a35;
-  font-weight: 800;
+  color: var(--primary-green);
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.7rem;
-  margin-bottom: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
   display: block;
+  letter-spacing: 1px;
 }
 .form-input {
   width: 100%;
-  border: none;
-  border-bottom: 2px solid #e0e2db;
-  padding: 12px 0;
+  border: 1.5px solid var(--input-border);
+  border-radius: 7px;
+  padding: 0.85rem 1.1rem;
   outline: none;
-  background: transparent;
-  color: #1a1d1a;
+  background: var(--bg-alt);
+  color: var(--text-main);
   font-size: 1rem;
+  margin-bottom: 0.5rem;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.02);
+}
+.form-input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 2px 8px 0 rgba(142, 176, 87, 0.08);
 }
 .submit-btn {
-  background: #1a1d1a;
+  background: var(--primary-green);
   color: #fff;
   width: 100%;
-  padding: 1.2rem;
+  padding: 1.1rem;
   border: none;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  margin-top: 2rem;
-  border-radius: 4px;
-  transition: 0.3s;
+  margin-top: 1.5rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(142, 176, 87, 0.08);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
 }
 .submit-btn:hover {
-  background: var(--primary-green);
+  background: #222;
+  color: var(--primary-green);
+  box-shadow: 0 4px 16px 0 rgba(142, 176, 87, 0.12);
+}
+@media (max-width: 991px) {
+  .contact-sidebar,
+  .form-container {
+    padding: 2rem 1.2rem;
+  }
+  .contact-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Buttons */
