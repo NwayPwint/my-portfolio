@@ -8,10 +8,69 @@
 
         <div class="nav-right">
           <div class="nav-links d-none d-lg-flex">
+            <a href="#about" class="nav-item">About</a>
             <a href="#expertise" class="nav-item">Expertise</a>
             <a href="#experience" class="nav-item">Experience</a>
+            <a href="#education" class="nav-item">Education</a>
           </div>
 
+          <button
+            @click="toggleTheme"
+            class="theme-toggle d-none d-lg-flex"
+            :title="isDark ? 'Light Mode' : 'Dark Mode'"
+          >
+            <svg
+              v-if="isDark"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <a href="#contact" class="cta-nav d-none d-lg-flex">Let's Talk</a>
+
+          <button class="hamburger d-lg-none" @click="menuOpen = !menuOpen">
+            <span :class="{ open: menuOpen }"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu d-lg-none" :class="{ open: menuOpen }">
+        <a href="#about" class="mobile-nav-item" @click="menuOpen = false">About</a>
+        <a href="#expertise" class="mobile-nav-item" @click="menuOpen = false">Expertise</a>
+        <a href="#experience" class="mobile-nav-item" @click="menuOpen = false">Experience</a>
+        <a href="#education" class="mobile-nav-item" @click="menuOpen = false">Education</a>
+        <div class="mobile-menu-actions">
           <button
             @click="toggleTheme"
             class="theme-toggle"
@@ -54,8 +113,7 @@
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
-
-          <a href="#contact" class="cta-nav">Let's Talk</a>
+          <a href="#contact" class="cta-nav" @click="menuOpen = false">Let's Talk</a>
         </div>
       </div>
     </nav>
@@ -72,9 +130,10 @@
                 <span class="serif-italic">efficient</span> digital solutions.
               </h2>
               <p class="hero-bio">
-                Computer Science graduate with 1.5 years of experience in a
-                Japanese-based IT environment. Specialized in Rails, Laravel,
-                and Vue.js.
+                A hardworking Full Stack Developer with a strong academic
+                background, focused on creating clean and efficient code.
+                Passionate about web development, eager to grow and contribute
+                to my team's success.
               </p>
               <div
                 class="hero-actions d-flex gap-3 justify-content-center justify-content-lg-start mt-4"
@@ -95,6 +154,20 @@
                 <div class="frame-accent"></div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-padding">
+        <div class="container">
+          <h2 class="section-label">About Me</h2>
+          <div class="about-content">
+            <p>
+              Always ready to learn new things and help the team achieve its
+              goals. I believe in writing clean, maintainable code and
+              continuously improving my skills to deliver high-quality
+              solutions.
+            </p>
           </div>
         </div>
       </section>
@@ -129,24 +202,165 @@
               class="exp-header d-flex justify-content-between align-items-start flex-wrap"
             >
               <div>
-                <h3 class="role-title">Full-Stack Engineer</h3>
-                <p class="company-info">Japanese-based IT Consultancy</p>
+                <h3 class="role-title">Junior Developer</h3>
+                <p class="company-info">Metateam Myanmar Co., Ltd.</p>
               </div>
-              <span class="exp-date">2024 — PRESENT</span>
+              <span class="exp-date">2024 — 2026</span>
             </div>
             <ul class="exp-list">
               <li>
-                Architected backends using <strong>Ruby on Rails</strong> and
-                <strong>Laravel</strong>.
+                Built full-stack team management applications using
+                <strong>Ruby on Rails</strong> (API mode) and
+                <strong>Vue 3</strong>.
               </li>
               <li>
-                Developed reactive frontends with <strong>Vue.js</strong>.
+                Automated scheduled survey dispatching and batch processing
+                using cron and Rake tasks via the whenever gem.
               </li>
               <li>
-                Adhered to strict Japanese
-                <strong>Quality Assurance (QA)</strong> standards.
+                Ensured high code quality and reliability through
+                <strong>RSpec</strong> testing and database optimization.
               </li>
             </ul>
+          </div>
+
+          <div class="experience-card mt-4">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">Internship Developer</h3>
+                <p class="company-info">ICT Research Center</p>
+              </div>
+              <span class="exp-date">May 2022 — July 2022</span>
+            </div>
+            <ul class="exp-list">
+              <li>
+                Completed a J2EE internship focused on collaborative city
+                directory web development and team projects.
+              </li>
+              <li>
+                Supported city directory web development activities, database
+                operations, and debugging processes.
+              </li>
+              <li>
+                Gained practical exposure to professional development workflows,
+                version control, and team collaboration tools.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-card mt-4">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">Freelance Developer</h3>
+                <p class="company-info">Learning Management System (LMS)</p>
+              </div>
+              <span class="exp-date">2026</span>
+            </div>
+            <ul class="exp-list">
+              <li>
+                Built a custom LMS for a business college using a
+                <strong>Nuxt (Vue 3)</strong> frontend.
+              </li>
+              <li>
+                Collaborated on backend services (with <strong>C#</strong>) and
+                system logic.
+              </li>
+              <li>
+                Managed the full development lifecycle, ensuring seamless
+                integration between the frontend and backend.
+              </li>
+              <li>
+                Ensured system reliability and created an intuitive user
+                experience for academic stakeholders.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section-padding section-bg-alt">
+        <div class="container">
+          <h2 class="section-label">Education</h2>
+          <div class="experience-card">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">Bachelor of Computer Science</h3>
+                <p class="company-info">
+                  University of Computer Studies, Yangon
+                </p>
+              </div>
+              <span class="exp-date">2016 — 2024</span>
+            </div>
+          </div>
+
+          <div class="experience-card mt-4">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">Diploma in ICT</h3>
+                <p class="company-info">ATBC International College</p>
+              </div>
+              <span class="exp-date">Sept 2022 — Dec 2022</span>
+            </div>
+          </div>
+
+          <div class="experience-card mt-4">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">
+                  Certificate in Web Development with PHP
+                </h3>
+                <p class="company-info">Host Myanmar Institute</p>
+              </div>
+              <span class="exp-date">2022</span>
+            </div>
+          </div>
+
+          <div class="experience-card mt-4">
+            <div
+              class="exp-header d-flex justify-content-between align-items-start flex-wrap"
+            >
+              <div>
+                <h3 class="role-title">Certificate in Special Web Design</h3>
+                <p class="company-info">MMSIT</p>
+              </div>
+              <span class="exp-date">2022</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="languages" class="section-padding">
+        <div class="container">
+          <h2 class="section-label">Languages</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="skill-card">
+                <h3>Burmese</h3>
+                <p>Native</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="skill-card">
+                <h3>English</h3>
+                <p>Intermediate</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="skill-card">
+                <h3>Japanese</h3>
+                <p>Basic</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -157,9 +371,20 @@
             <div class="row g-0">
               <div class="col-lg-5 contact-sidebar">
                 <h2 class="contact-title">Connect.</h2>
-                <p>Based in Yangon, available for global opportunities.</p>
+                <p>
+                  Based in Hlaing Township, Yangon, available for global
+                  opportunities.
+                </p>
+                <div class="contact-info mt-4">
+                  <p><strong>Email:</strong> nwaypwint1572@gmail.com</p>
+                  <p><strong>Phone:</strong> +959981673070</p>
+                </div>
                 <div class="social-links-minimal mt-4">
-                  <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                  <a
+                    href="https://linkedin.com/in/nway-pwint-phyu-713444317"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
                   <a
                     href="https://github.com/NwayPwint"
                     target="_blank"
@@ -226,7 +451,10 @@
             >
           </div>
           <div class="footer-links-group d-flex gap-4">
-            <a href="https://linkedin.com" target="_blank" class="footer-social"
+            <a
+              href="https://linkedin.com/in/nway-pwint-phyu-713444317"
+              target="_blank"
+              class="footer-social"
               >LinkedIn</a
             >
             <a
@@ -245,6 +473,7 @@
 <script setup>
 import { ref } from "vue";
 const isDark = ref(true);
+const menuOpen = ref(false);
 const toggleTheme = () => {
   isDark.value = !isDark.value;
 };
@@ -252,21 +481,39 @@ const toggleTheme = () => {
 const skillGroups = [
   {
     icon: "▩",
-    title: "Backend",
-    desc: "Robust server-side architecture.",
-    tags: ["Rails", "Laravel", "Spring Boot"],
+    title: "Frontend",
+    desc: "Reactive, high-performance UI.",
+    tags: ["React", "Vue 3"],
   },
   {
     icon: "▨",
-    title: "Database",
-    desc: "Scalable data management.",
-    tags: ["MySQL", "PostgreSQL"],
+    title: "Backend",
+    desc: "Robust server-side architecture.",
+    tags: ["Ruby on Rails", "PHP", "Node.js"],
   },
   {
     icon: "▦",
-    title: "Frontend",
-    desc: "Reactive, high-performance UI.",
-    tags: ["Vue 3", "JS", "Bootstrap"],
+    title: "Database",
+    desc: "Scalable data management.",
+    tags: ["MySQL", "MongoDB"],
+  },
+  {
+    icon: "▧",
+    title: "Tools",
+    desc: "Development workflow & collaboration.",
+    tags: ["Git", "GitHub", "Postman", "VS Code"],
+  },
+  {
+    icon: "▨",
+    title: "Testing",
+    desc: "Ensuring code quality & reliability.",
+    tags: ["RSpec", "Unit Testing"],
+  },
+  {
+    icon: "▩",
+    title: "Other",
+    desc: "Full-stack capabilities & emerging tech.",
+    tags: ["API Integration", "Full-stack Lifecycle", "Agentic AI"],
   },
 ];
 </script>
@@ -325,12 +572,17 @@ const skillGroups = [
   z-index: 1100;
   border-bottom: 1px solid var(--input-border);
 }
+.nav-wrapper .container {
+  flex-wrap: nowrap;
+}
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex-wrap: nowrap;
 }
 .brand {
+  font-size: 0.9rem;
   font-weight: 800;
   text-decoration: none;
   color: var(--heading-color);
@@ -366,11 +618,11 @@ const skillGroups = [
 .cta-nav {
   background: var(--primary-green);
   color: #fff !important;
-  padding: 0.7rem 1.5rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 800;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
 }
 
@@ -662,12 +914,20 @@ const skillGroups = [
 
 /* Footer */
 .footer-section {
-  padding: 60px 0;
+  padding: 40px 0;
   border-top: 1px solid var(--input-border);
   background: var(--bg-alt);
 }
-.copyright {
+.footer-content {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.footer-logo .brand {
   font-size: 0.8rem;
+}
+.copyright {
+  font-size: 0.7rem;
   color: var(--text-muted);
   margin-top: 10px;
 }
@@ -675,7 +935,94 @@ const skillGroups = [
   text-decoration: none;
   color: var(--primary-green);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+}
+
+/* Hamburger */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger span {
+  position: relative;
+}
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.hamburger span::before {
+  top: -6px;
+}
+.hamburger span::after {
+  top: 6px;
+}
+.hamburger span.open {
+  background: transparent;
+}
+.hamburger span.open::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger span.open::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: var(--nav-bg);
+  border-top: 1px solid var(--input-border);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.mobile-menu.open {
+  display: flex;
+  max-height: 400px;
+  padding: 1rem 0;
+}
+.mobile-nav-item {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.6rem 0;
+}
+.mobile-nav-item:hover {
+  color: var(--primary-green);
+}
+.mobile-menu-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--input-border);
 }
 
 /* Mobile Specific Fixes */
@@ -683,9 +1030,24 @@ const skillGroups = [
   .hero-section {
     padding: 60px 0;
   }
+  .full-name {
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+  }
+  .main-headline {
+    font-size: 1.15rem;
+  }
+  .hero-bio {
+    font-size: 0.95rem;
+  }
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
   .photo-fantastic-frame {
-    width: 240px; /* Scaling down the profile image for mobile */
-    margin: 0 auto 40px;
+    width: 200px;
+    margin: 0 auto 30px;
   }
   .profile-img-square {
     border-width: 6px;
@@ -693,9 +1055,124 @@ const skillGroups = [
   .frame-accent {
     inset: -10px 10px 10px -10px;
   }
+  .section-padding {
+    padding: 60px 0;
+  }
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+  }
+  .skill-card,
+  .experience-card {
+    padding: 1.8rem;
+  }
+  .skill-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .skill-card h3,
+  .experience-card h3 {
+    font-size: 1.1rem;
+  }
+  .role-title {
+    font-size: 1.3rem;
+  }
+  .company-info {
+    font-size: 0.85rem;
+  }
+  .exp-date {
+    font-size: 0.75rem;
+  }
+  .exp-list {
+    margin-top: 1.5rem;
+  }
+  .exp-list li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
   .contact-sidebar,
   .form-container {
-    padding: 3rem;
+    padding: 1.5rem;
+  }
+  .contact-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .contact-sidebar p {
+    font-size: 0.9rem;
+  }
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+  .form-input {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+  .footer-section {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .full-name {
+    font-size: 2rem;
+  }
+  .main-headline {
+    font-size: 1rem;
+  }
+  .hero-bio {
+    font-size: 0.88rem;
+  }
+  .greeting {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+  .hero-section {
+    padding: 40px 0;
+  }
+  .section-padding {
+    padding: 40px 0;
+  }
+  .section-label {
+    font-size: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding-left: 10px;
+  }
+  .skill-card,
+  .experience-card {
+    padding: 1.3rem;
+  }
+  .role-title {
+    font-size: 1.1rem;
+  }
+  .skill-tags span {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    margin-right: 5px;
+  }
+  .brand {
+    font-size: 0.7rem;
+  }
+  .contact-sidebar,
+  .form-container {
+    padding: 1.2rem;
+  }
+  .submit-btn {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+  .social-links-minimal {
+    gap: 1rem;
+  }
+  .social-links-minimal a {
+    font-size: 0.75rem;
   }
 }
 </style>
